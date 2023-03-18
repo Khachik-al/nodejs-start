@@ -13,7 +13,7 @@ app.addRouter(useRouter)
 const start = async () => {
     try {
         await mongoose.connect(
-            "mongodb+srv://aloyanxachik9:055151403xx@cluster0.uph6rwn.mongodb.net/?retryWrites=true&w=majority"
+            `mongodb+srv://aloyanxachik9:${process.env.MONGO_PASS}@cluster0.uph6rwn.mongodb.net/?retryWrites=true&w=majority`
         )
         app.listen(PORT,() => console.log(`Server started on PORT ${PORT}`))
     } catch (e) {
